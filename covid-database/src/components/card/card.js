@@ -7,7 +7,7 @@ import UpdatedDate from '../../services/date';
 
 export default function ActionAreaCard(props) {
   return (
-    <Card sx={{ maxWidth: 180 }}>
+    <Card>
       <CardActionArea>
         <CardContent>
             <Typography variant="body2" color="text.secondary">

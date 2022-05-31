@@ -60,6 +60,7 @@ const GlobalState = (props) => {
             ],
             borderColor: "black",
             borderWidth: 2,
+            responsive: true
             },
         ],
     });
