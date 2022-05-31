@@ -5,7 +5,7 @@ import Header from "../../components/header/header";
 import GlobalStateContext from "../../global/globalStateContext";
 import UpdatedDate from "../../services/date";
 import { separator } from "../../services/separator";
-import { CardContainer, CardsContainer } from "./homePageStyle";
+import { CardContainer, CardsContainer, ChartContainer } from "./homePageStyle";
 
 const HomePage = () => {
 
@@ -22,33 +22,35 @@ const HomePage = () => {
             <CardContainer>
                 <Card 
                     title = "WORLD CASES CONFIRMED"
-                    info = {states.cases.cases}
+                    info = {states.cases.cases.toLocaleString('en-US')}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CASES RECOVERED"
-                    info = {states.cases.recovered}
+                    info = {states.cases.recovered.toLocaleString('en-US')}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CONFIRMED DEATHS"
-                    info = {states.cases.deaths}
+                    info = {states.cases.deaths.toLocaleString('en-US')}
                 />
             </CardContainer>
         </CardsContainer>
 
-        <h1>{states.selects}</h1>
-        <select value={states.selects} onChange={e=>setters.setSelectes(e.target.value)}>
-            <option>TESTE</option>
-        </select>
-        
-        <div style={{ width: 500 }}>
-            <LineChart chartData={states.userData} />
-        </div>
+        <ChartContainer>
+            <h1>{states.selects}</h1>
+            <select value={states.selects} onChange={e=>setters.setSelectes(e.target.value)}>
+                <option>TESTE</option>
+            </select>
+            
+            <div style={{ width: 500 }}>
+                <LineChart chartData={states.userData} />
+            </div>
+        </ChartContainer>
 
         </div>  
     )  
