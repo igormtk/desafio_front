@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Card from "../../components/card/card";
 import LineChart from "../../components/chart/chart"
 import Header from "../../components/header/header";
@@ -9,6 +9,26 @@ const HomePage = () => {
 
     const { states, setters } = useContext(GlobalStateContext)
 
+    const [userData, setUserData] = useState({
+        labels: [2,3,4],
+        datasets: [
+            {
+                label: "Confirmed",
+                data: [2, 4, 6], //confirmedCases,
+                backgroundColor: [
+                    "rgba(75,192,192,1)",
+                    "#ecf0f1",
+                    "#50AF95",
+                    "#f3ba2f",
+                    "#2a71d0",
+                ],
+                borderColor: "black",
+                borderWidth: 2,
+                responsive: true
+            },
+        ],
+    });
+
     return(<div>
 
         <Header title={"COVID-19 DATABASE"}/> 
@@ -17,21 +37,21 @@ const HomePage = () => {
             <CardContainer>
                 <Card 
                     title = "WORLD CASES CONFIRMED"
-                    info = {states.casesConfirmed}
+                    info = {states.cases.cases}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CASES RECOVERED"
-                    info = {states.casesRecovered}
+                    info = {states.cases.recovered}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CONFIRMED DEATHS"
-                    info = {states.deathCases}
+                    info = {states.cases.deaths}
                 />
             </CardContainer>
         </CardsContainer>
@@ -43,7 +63,7 @@ const HomePage = () => {
             </select>
             
             <div style={{ width: 700 }}>
-                <LineChart chartData={states.userData} />
+                <LineChart chartData={userData} />
             </div>
         </ChartContainer>
 
