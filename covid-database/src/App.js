@@ -1,6 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import theme from "./constants/theme";
 import GlobalState from "./global/globalState";
 import GlobalStyle from "./global/globalStyle";
 import RouterComponent from "./Routes/Router";
@@ -8,17 +6,14 @@ import RouterComponent from "./Routes/Router";
 function App() {
   return (
   
-    <ThemeProvider theme={theme}>
+    <GlobalState>
 
-      <GlobalState>
+      <GlobalStyle/>
 
-        <GlobalStyle/>
+      <RouterComponent/>
 
-        <RouterComponent/>
+    </GlobalState>
 
-      </GlobalState>
-
-    </ThemeProvider>
   );
 }
 

@@ -1,1 +1,1 @@
-export const BASE_URL = "https://covid19.mathdro.id/api"
+export const BASE_URL_NOVELCOVID_API = "https://corona.lmao.ninja/v2"
