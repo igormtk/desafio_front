@@ -8,9 +8,15 @@ const GlobalState = (props) => {
     const [casesPerDay, setCasesPerDay] = useState([])
     const [selects, setSelectes] = useState()
 
-    const cases = useRequestData({}, `${BASE_URL_NOVELCOVID_API}/all`)
-    const globalCases = useRequestData({}, `${BASE_URL_NOVELCOVID_API}/historical/all`)
-    const countryCases = useRequestData({}, `${BASE_URL_NOVELCOVID_API}/countries`)
+    const cases = useRequestData([{}], `${BASE_URL_NOVELCOVID_API}/all`)
+    const globalCases = useRequestData([], `${BASE_URL_NOVELCOVID_API}/historical/all`)
+    const countryCases = useRequestData([], `${BASE_URL_NOVELCOVID_API}/countries`)
+
+    const casesConfirmed = cases.cases
+    const casesRecovered = cases.recovered
+    const deathCases = cases.deaths
+
+    console.log(casesConfirmed)
 
     const UserData = [
         {
@@ -65,7 +71,7 @@ const GlobalState = (props) => {
         ],
     });
 
-    const states = { cases, userData, casesPerDay, selects, globalCases, countryCases }
+    const states = { cases, userData, casesPerDay, selects, globalCases, countryCases, casesConfirmed, casesRecovered, deathCases }
     const setters = { setUserData, setCasesPerDay, setSelectes }
 
     return (

@@ -3,16 +3,11 @@ import Card from "../../components/card/card";
 import LineChart from "../../components/chart/chart"
 import Header from "../../components/header/header";
 import GlobalStateContext from "../../global/globalStateContext";
-import UpdatedDate from "../../services/date";
-import { separator } from "../../services/separator";
 import { CardContainer, CardsContainer, ChartContainer } from "./homePageStyle";
 
 const HomePage = () => {
 
     const { states, setters } = useContext(GlobalStateContext)
-
-    // const infoConfirmed = states.cases.cases
-    // const infoConfirmedFormated = separator(infoConfirmed)
 
     return(<div>
 
@@ -22,21 +17,21 @@ const HomePage = () => {
             <CardContainer>
                 <Card 
                     title = "WORLD CASES CONFIRMED"
-                    info = {states.cases.cases.toLocaleString('en-US')}
+                    info = {states.casesConfirmed}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CASES RECOVERED"
-                    info = {states.cases.recovered.toLocaleString('en-US')}
+                    info = {states.casesRecovered}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CONFIRMED DEATHS"
-                    info = {states.cases.deaths.toLocaleString('en-US')}
+                    info = {states.deathCases}
                 />
             </CardContainer>
         </CardsContainer>
@@ -47,7 +42,7 @@ const HomePage = () => {
                 <option>TESTE</option>
             </select>
             
-            <div style={{ width: 500 }}>
+            <div style={{ width: 700 }}>
                 <LineChart chartData={states.userData} />
             </div>
         </ChartContainer>
