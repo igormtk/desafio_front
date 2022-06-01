@@ -9,6 +9,7 @@ import {
 import { useRequestData } from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
 import Chart from "../../components/chart/chart";
+import Chart2  from "../../components/chart/chart2";
 
 const HomePage = () => {
 
@@ -43,6 +44,7 @@ const HomePage = () => {
 
         <ChartContainer>
            <Chart/>
+           {/* <Chart2/> */}
         </ChartContainer>
 
         </div>  
