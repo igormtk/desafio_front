@@ -1,16 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Card from "../../components/card/card";
 import Header from "../../components/header/header";
-import GlobalStateContext from "../../global/globalStateContext";
 import { 
     CardContainer, 
     CardsContainer, 
     ChartContainer 
 } from "./homePageStyle";
+import { useRequestData } from "../../hooks/useRequestData";
+import { BASE_URL } from "../../constants/url";
+import { Chart } from "../../components/chart/chart";
 
 const HomePage = () => {
 
-    const { states, setters } = useContext(GlobalStateContext)    
+    const cases = useRequestData([], `${BASE_URL}/all`)
 
     return(<div>
 
@@ -20,33 +22,27 @@ const HomePage = () => {
             <CardContainer>
                 <Card 
                     title = "WORLD CASES CONFIRMED"
-                    info = {states.cases.cases}
+                    info = {cases.cases}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CASES RECOVERED"
-                    info = {states.cases.recovered}
+                    info = {cases.recovered}
                 />
             </CardContainer>
 
             <CardContainer>
                 <Card 
                     title = "WORLD CONFIRMED DEATHS"
-                    info = {states.cases.deaths}
+                    info = {cases.deaths}
                 />
             </CardContainer>
         </CardsContainer>
 
         <ChartContainer>
-            <h1>{states.selects}</h1>
-            <select value={states.selects} onChange={e=>setters.setSelectes(e.target.value)}>
-                <option>TESTE</option>
-            </select>
-            
-            {states.chart}
-
+           {Chart()}
         </ChartContainer>
 
         </div>  

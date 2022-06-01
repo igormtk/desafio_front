@@ -1,18 +1,15 @@
 import React from "react";
-import GlobalState from "./global/globalState";
 import GlobalStyle from "./global/globalStyle";
 import RouterComponent from "./Routes/Router";
 
 function App() {
-  return (
+  return (<div>
   
-    <GlobalState>
+    <GlobalStyle/>
 
-      <GlobalStyle/>
+    <RouterComponent/>
 
-      <RouterComponent/>
-
-    </GlobalState>
+    </div>
 
   );
 }
