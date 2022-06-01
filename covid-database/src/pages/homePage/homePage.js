@@ -1,33 +1,77 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Card from "../../components/card/card";
-import LineChart from "../../components/chart/chart"
 import Header from "../../components/header/header";
 import GlobalStateContext from "../../global/globalStateContext";
-import { CardContainer, CardsContainer, ChartContainer } from "./homePageStyle";
+import { 
+    CardContainer, 
+    CardsContainer, 
+    ChartContainer 
+} from "./homePageStyle";
+import { 
+    Chart as ChartJS, 
+    CategoryScale, 
+    LinearScale, 
+    BarElement, 
+    Title, 
+    Tooltip, 
+    Legend 
+} from "chart.js"
+import { Bar } from "react-chartjs-2"
+
+ChartJS.register(
+    CategoryScale, 
+    LinearScale, 
+    BarElement, 
+    Title, 
+    Tooltip, 
+    Legend
+)
 
 const HomePage = () => {
 
     const { states, setters } = useContext(GlobalStateContext)
 
-    const [userData, setUserData] = useState({
-        labels: [2,3,4],
-        datasets: [
-            {
-                label: "Confirmed",
-                data: [2, 4, 6], //confirmedCases,
-                backgroundColor: [
-                    "rgba(75,192,192,1)",
-                    "#ecf0f1",
-                    "#50AF95",
-                    "#f3ba2f",
-                    "#2a71d0",
-                ],
-                borderColor: "black",
-                borderWidth: 2,
-                responsive: true
+    useEffect(()=>{
+        setters.setChartData({
+            labels: ["population", "Confirmed Cases", "Recovered Cases", "Death Cases"],
+            datasets: [
+                {
+                    label: "Population",
+                    data: states.countryPopulation,
+                    borderColor: "rgb(53, 162, 235)",
+                    backgroundColor: "blue"
+                },
+                {
+                    label: "Confirmed cases",
+                    data: states.confirmedCases,
+                    borderColor: "rgb(53, 162, 235)",
+                    backgroundColor: "red"
+                },
+                {
+                    label: "Recovered Cases",
+                    data: states.recoveredCases,
+                    borderColor: "rgb(53, 162, 235)",
+                    backgroundColor: "green"
+                },
+                {
+                    label: "Death Cases",
+                    data: states.deathCases,
+                    borderColor: "rgb(53, 162, 235)",
+                    backgroundColor: "black"
+                },
+            ]
+        })
+        setters.setChartOptions({
+            responsive: true,
+            plugins:{
+                legend: "top"
             },
-        ],
-    });
+            title: {
+                display: true,
+                text: "Test chart"
+            },
+        })
+    }, [])
 
     return(<div>
 
@@ -62,9 +106,8 @@ const HomePage = () => {
                 <option>TESTE</option>
             </select>
             
-            <div style={{ width: 700 }}>
-                <LineChart chartData={userData} />
-            </div>
+            <Bar options={states.chartOptions} data={states.chartData}/>
+            
         </ChartContainer>
 
         </div>  
