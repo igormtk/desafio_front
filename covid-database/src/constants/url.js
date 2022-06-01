@@ -1,1 +1,1 @@
-export const BASE_URL_NOVELCOVID_API = "https://corona.lmao.ninja/v2"
+export const BASE_URL = "https://corona.lmao.ninja/v2"
