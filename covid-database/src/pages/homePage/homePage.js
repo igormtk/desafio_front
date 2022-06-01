@@ -8,7 +8,7 @@ import {
 } from "./homePageStyle";
 import { useRequestData } from "../../hooks/useRequestData";
 import { BASE_URL } from "../../constants/url";
-import { Chart } from "../../components/chart/chart";
+import Chart from "../../components/chart/chart";
 
 const HomePage = () => {
 
@@ -42,7 +42,7 @@ const HomePage = () => {
         </CardsContainer>
 
         <ChartContainer>
-           {Chart()}
+           <Chart/>
         </ChartContainer>
 
         </div>  
