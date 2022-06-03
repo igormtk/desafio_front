@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Desafio-Front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Desenvolvedor
 
-## Available Scripts
+- Igor Eiiji Avelar Matsuoka
 
-In the project directory, you can run:
+## Tecnologias utilizadas:
+- ReactJS
+- Axios
+- Styled-Components
+- Material Ui
+- React-router-DOM
+- ChartJS
 
-### `npm start`
+## API UTILIZADA
+- NovelCOVID API
+- Documentação API:
+Acesse o postman aqui 👉 https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#07c318a5-21f2-460c-8ede-edd62dee7a54
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## O que funciona
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- O usuário é capaz vizualizar os o número globais de casos confirmados, casos recuperados e mortes causadas pela covid-19. Também é possível ver a data de atualização desses dados.
 
-### `npm test`
+- Também é possível vizualizar um gráfico de casos confirmados, casos recuperados e mortes por continente. Clicando na legenda acima do gráfico é possível ligar ou desligar as informações dos dados no gráfico, caso haja necessidade do usuário comparar apenas um tipo de caso entre continentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## O que não foi implementado por falta de tempo:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Um select ou check box que permita deixar o gráfico mais dinâmico de forma que fosse possível vizualizar e comparar outros dados que vinham da API
