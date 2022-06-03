@@ -76,7 +76,8 @@ const Chart = () => {
     };
 
   return (<div>
-       <Bar height={"800px"} width={"1000px"} options={options} data={data} />;
+      <canvas role="img" height="300" width="1000"></canvas>
+      <Bar width="800" height="800" options={options} data={data} />;
     </div>
   )
 }
