@@ -15,6 +15,7 @@ https://torpid-ocean.surge.sh
 - Material Ui
 - React-router-DOM
 - ChartJS
+- surge
 
 ## API UTILIZADA
 - NovelCOVID API
